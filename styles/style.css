@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template: 80px 50px 1fr / 1fr;
+    grid-template-areas:
+        'header'
+        'navBar'
+        'mainContent';
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: hsl(180, 80%, 50%);
+}
+
+.navBar {
+    grid-area: navBar;
+    background-color: hsl(106, 80%, 50%);
+}
+
+.main {
+    grid-area: mainContent;
+    background-color: hsl(340, 80%, 50%);
+}
