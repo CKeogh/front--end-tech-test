@@ -1,8 +1,21 @@
+* {
+    font-family: "Proxima Nova - Regular", 'Lato', sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template: 80px 50px 1fr / 1fr;
+    grid-template: 98px 50px 1fr / 1fr;
     grid-template-areas:
         'header'
         'navBar'
@@ -12,15 +25,81 @@ body {
 
 header {
     grid-area: header;
-    background-color: hsl(180, 80%, 50%);
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    grid-template-areas: 'searchBar logo icons';
+    border-bottom: 1px hsl(0, 0%, 60%) solid;
+    align-items: center;
+}
+
+.searchBar {
+    grid-area: searchBar;
+    margin: 0 50px;
+}
+
+/* THIS NEEDS TO BE EXTRACTED -- CURRENTLY INLINE */
+.searchField {
+    /* border: 0px solid; */
+}
+
+.logo {
+    grid-area: logo;
+    width: 140px;
+    height: 58px;
+    justify-self: center;
+}
+
+.iconContainer {
+    grid-area: icons;
+    justify-self: right;
+    margin: 0 50px 0 0;
+    align-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin: 10px;
+    transition: transform 0.1s ease;
+    transform-origin: 10%;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.currencySelect {
+    margin: 0 50px 0 0;
+    height: 20px;
+    background-color: white;  
+    border: none;
+    width: 80px;
 }
 
 .navBar {
     grid-area: navBar;
-    background-color: hsl(106, 80%, 50%);
+}
+
+.navList {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px hsl(0, 0%, 60%) solid;
+
+}
+
+.navItem {
+    margin: 0 10px;
+}
+
+.navItem:hover {
+    text-decoration: underline;
 }
 
 .main {
+    text-align: center;
     grid-area: mainContent;
-    background-color: hsl(340, 80%, 50%);
 }

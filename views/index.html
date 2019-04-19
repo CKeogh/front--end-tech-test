@@ -6,16 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Utility Design</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <script defer src="../scripts/script.js"></script>
 </head>
 
 <body>
+
     <header>
-        HEADER
+        <div class="searchBar">
+            <i class="fas fa-search"></i>
+            <input placeholder="Search..." class="searchField" style="border: none;" />
+        </div>
+        <img class="logo" src="../assets/images/utilityLogo.png" />
+        <div class="iconContainer">
+            <select class="currencySelect">
+                <option value="pounds">£ GBP</option>
+                <option value="euros">€ EUR</option>
+                <option value="dollars">$ USD</option>
+            </select>
+            <a href="#"><img class="icon" src="../assets/images/userIcon.png" alt="user icon" /></a>
+            <a href="#"><img class="icon" src="../assets/images/basketIcon.png" alt="basket icon" /></a>
+        </div>
     </header>
+
     <nav class="navBar">
-        NAVBAR
+        <ul class="navList">
+            <li class="navItem"><a href="#">Furniture</a></li>
+            <li class="navItem"><a href="#">Lighting</a></li>
+            <li class="navItem"><a href="#">Home Accessories</a></li>
+            <li class="navItem"><a href="#">Collections</a></li>
+            <li class="navItem"><a href="#">Gifts</a></li>
+            <li class="navItem"><a href="#">Outlet</a></li>
+            <li class="navItem"><a href="#">Brands</a></li>
+            <li class="navItem"><a href="#">Blog</a></li>
+            <li class="navItem"><a href="#">About</a></li>
+            <li class="navItem"><a href="#">Our Stores</a></li>
+        </ul>
     </nav>
     <div class="main">
         MAIN CONTENT
