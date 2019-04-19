@@ -15,7 +15,7 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template: 90px 50px 1fr / 1fr;
+    grid-template: 90px 40px 1fr / 1fr;
     grid-template-areas:
         'header'
         'navBar'
@@ -76,18 +76,15 @@ header {
     width: 80px;
 }
 
-.navBar {
-    grid-area: navBar;
-}
-
 .navList {
-    margin: 0;
+    grid-area: navBar;
     padding: 10px;
+    border-bottom: 1px hsl(0, 0%, 60%) solid;
+    margin: 0;
     display: flex;
     list-style: none;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px hsl(0, 0%, 60%) solid;
 }
 
 .navItem {
