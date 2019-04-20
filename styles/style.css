@@ -98,4 +98,29 @@ header {
 .main {
     text-align: center;
     grid-area: mainContent;
+    display: grid;
+    grid-template-columns: 10fr 9fr;
+    grid-template-areas: 'productDisplay productForm'
+}
+
+.productDisplay {
+    grid-area: productDisplay;
+    margin: 10%;
+}
+
+.productImage {
+    width: 100%;
+    height: auto;
+}
+
+.productThumbnail {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #250858;
+    margin: 120px;
+}
+/* TODO: LINE UP ARROWS AROUND PRODUCT IMAGE */
+.productForm {
+    grid-area: productForm;
+    /* border: 1px solid blue; */
 }
