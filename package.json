@@ -18,5 +18,7 @@
   },
   "homepage": "https://github.com/CKeogh/igoo-tech-test#readme",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  }
 }

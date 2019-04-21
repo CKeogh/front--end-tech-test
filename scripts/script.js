@@ -1,21 +1,23 @@
-// import { navigation, aList } from '../api';
 
-const navigation = [
-    'Furniture',
-    'Lighting',
-    'Home Accessories',
-    'Collections',
-    'Gifts',
-    'Outlet',
-    'Brands',
-    'Blog',
-    'About',
-    'Our Stores'
-]
+// placeholder api request
+const request = {
+    navigation: [
+        'Furniture',
+        'Lighting',
+        'Home Accessories',
+        'Collections',
+        'Gifts',
+        'Outlet',
+        'Brands',
+        'Blog',
+        'About',
+        'Our Stores'
+    ],
+}
 
 function populateNavBar() {
     const navBar = document.querySelector('.navList')
-    navigation.forEach(item => {
+    request.navigation.forEach(item => {
         let node = document.createElement('LI')
         let link = document.createElement('A')
         link.setAttribute('href', '#')
