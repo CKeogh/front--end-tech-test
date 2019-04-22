@@ -4,7 +4,7 @@
   "description": "--- title: Real-World Front-end Task client: utility design date: 2019-04-18 ---",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha spec"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,5 @@
   },
   "homepage": "https://github.com/CKeogh/igoo-tech-test#readme",
   "dependencies": {},
-  "devDependencies": {
-    "mocha": "^6.1.4"
-  }
+  "devDependencies": {}
 }

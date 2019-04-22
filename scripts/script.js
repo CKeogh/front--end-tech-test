@@ -13,6 +13,10 @@ const request = {
         'About',
         'Our Stores'
     ],
+    route: [
+        'Home',
+        'Hay About A Lounge Chair - Low AAL82'
+    ],
 }
 
 function populateNavBar() {
@@ -29,4 +33,21 @@ function populateNavBar() {
     })
 }
 
+function createRouteString(route) {
+    return route.reduce((routeString, page, i) => {
+        routeString += i === route.length - 1
+            ? `${page}`
+            : `${page} » `
+        return routeString;
+    }, '')
+}
+
+function populateRoute() {
+    const routeElement = document.querySelector('.route');
+    const routeString = createRouteString(request.route);
+    const text = document.createTextNode(routeString);
+    routeElement.appendChild(text);
+}
+
 populateNavBar();
+populateRoute();

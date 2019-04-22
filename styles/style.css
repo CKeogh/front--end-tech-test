@@ -15,10 +15,11 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template: 90px 40px 1fr / 1fr;
+    grid-template: 90px 40px 30px 1fr / 1fr;
     grid-template-areas:
         'header'
         'navBar'
+        'route'
         'mainContent';
     height: 100vh;
 }
@@ -28,7 +29,7 @@ header {
     display: grid;
     grid-template-columns: 300px 1fr 300px;
     grid-template-areas: 'searchBar logo icons';
-    border-bottom: 1px hsl(0, 0%, 60%) solid;
+    border-bottom: 1px #cccccc solid;
     align-items: center;
 }
 
@@ -79,7 +80,7 @@ header {
 .navList {
     grid-area: navBar;
     padding: 10px;
-    border-bottom: 1px hsl(0, 0%, 60%) solid;
+    border-bottom: 1px #cccccc solid;
     margin: 0;
     display: flex;
     list-style: none;
@@ -89,10 +90,18 @@ header {
 
 .navItem {
     margin: 0 10px;
+    font-size: 16px;
 }
 
 .navItem:hover {
     text-decoration: underline;
+}
+
+.route {
+    grid-area: route;
+    color: #999999;
+    font-size: 14px;
+    margin: 16px
 }
 
 .main {
@@ -106,18 +115,36 @@ header {
 .productDisplay {
     grid-area: productDisplay;
     margin: 10%;
+    display: grid;
+    grid-template: 1fr 50px / 20px 1fr 20px;
+    grid-template-areas: 
+        'leftArrow productImage rightArrow'
+        '. productThumbnail .';
+}
+
+.leftArrow {
+    grid-area: leftArrow;
+    align-self: center;
+}
+
+.rightArrow {
+    grid-area: rightArrow;
+    align-self: center;
 }
 
 .productImage {
+    grid-area: productImage;
     width: 100%;
     height: auto;
 }
 
 .productThumbnail {
+    grid-area: productThumbnail;
     width: 100px;
     height: 100px;
     border: 3px solid #250858;
-    margin: 120px;
+    justify-self: center;
+    margin: 80px 0;
 }
 /* TODO: LINE UP ARROWS AROUND PRODUCT IMAGE */
 .productForm {
