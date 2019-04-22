@@ -105,7 +105,6 @@ header {
 }
 
 .main {
-    text-align: center;
     grid-area: mainContent;
     display: grid;
     grid-template-columns: 6fr 5fr;
@@ -150,7 +149,7 @@ header {
 .productForm {
     grid-area: productForm;
     border: 1px solid blue;
-    display: grid;
+    /* display: grid; */
 }
 
 .productHeader {
