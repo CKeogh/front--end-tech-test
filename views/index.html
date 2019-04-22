@@ -57,7 +57,9 @@
                 <label class="formLabel" for="fabricSelect">Fabric:</label>
                 <select class="formSelect" name="fabricSelect" id="fabricSelect">
                     <option class="formOption" value="">Select your fabric</option>
-                    <option class="formOption" value="SteelcutTrio">Steelcut Trio</option>
+                    <option value="SteelcutTrio">
+                        <div class="formOption">Steelcut Trio</div>
+                    </option>
                 </select>
                 <label class="formLabel" for="colourSelect">Colour:</label>
                 <select class="formSelect" name="colourSelect" id="colourSelect">
@@ -67,11 +69,22 @@
                 <select class="formSelect" name="legSelect" id="legSelect">
                     <option class="formOption" value="">Select your leg finish</option>
                 </select>
-                <label class="formLabel" for="seatSelect">Optional Seat Cushion</label>
+                <label class="formLabel" for="seatSelect">Optional Seat Cushion:</label>
                 <select class="formSelect" name="seatSelect" id="seatSelect">
                     <option class="formOption" value="">Select your seat cushion</option>
                 </select>
             </form>
+            <div class="priceCalc-container">
+                <p class="formLabel priceCalc-title">Quantity</p>
+                <input class="quantityDisplay" value="1" />
+                <div class="buttons">
+                    <button class="quantityChange-button"><img src="../assets/images/arrowUp.png" /></button>
+                    <button class="quantityChange-button"><img src="../assets/images/arrowDown.png" /></button>
+                </div>
+                <p class="total">Total £809.00</p>
+                <button class="addToBasket">Add to Basket</button>
+                <button class="wishList"><img src="../assets/images/wishList-button.png" /></button>
+            </div>
         </div>
     </div>
 

@@ -115,7 +115,7 @@ header {
     grid-area: productDisplay;
     margin: 10%;
     display: grid;
-    grid-template: 1fr 50px / 20px 1fr 20px;
+    grid-template: 500px 50px / 20px 1fr 20px;
     grid-template-areas: 
         'leftArrow productImage rightArrow'
         '. productThumbnail .';
@@ -183,19 +183,82 @@ header {
 .formMain {
     display: flex;
     flex-direction: column;
+    padding: 31px 0;
+    border-bottom: 1px #cccccc solid;
 }
 
 .formLabel {
     font-weight: bold;
     margin: 10px 0;
+    font-size: 20px;
 }
 
 .formSelect {
     height: 70px;
     width: 500px;
     background: url('../assets/images/dropdownBg.png');
+    /* border: 1px #cccccc solid; */
     border: none;
-    -moz-appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 19px;
 }
 
+.priceCalc-container {
+    height: 230px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 80px 50px 1fr 50px;
+    grid-template-areas: 
+        'title . . .'
+        'quantityDisplay buttons total .'
+        'addToBasket addToBasket addToBasket wishList';
+    align-items: center;
+}
+
+.priceCalc-title {
+    grid-area: title;
+}
+
+.quantityDisplay {
+    grid-area: quantityDisplay;
+    width: 70px;
+    height: 50px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.buttons {
+    grid-area: buttons;
+    align-self: center;
+}
+
+.quantityChange-button {
+    width: 36px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid #cccccc;
+    box-shadow: none;
+}
+
+.total {
+    grid-area: total;
+}
+
+.addToBasket {
+    width: 440px;
+    height: 50px;
+    grid-area: addToBasket;
+    background-color: #9b9b9b;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+}
+
+.wishList {
+    height: 50px;
+    width: 50px;
+    grid-area: wishList;
+    border: none;
+    background-color: white;
+}
