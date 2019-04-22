@@ -145,7 +145,7 @@ header {
     justify-self: center;
     margin: 80px 0;
 }
-/* TODO: LINE UP ARROWS AROUND PRODUCT IMAGE */
+
 .productForm {
     grid-area: productForm;
     padding: 30px;
