@@ -148,9 +148,54 @@ header {
 /* TODO: LINE UP ARROWS AROUND PRODUCT IMAGE */
 .productForm {
     grid-area: productForm;
-    border: 1px solid blue;
+    padding: 30px;
     /* display: grid; */
 }
 
-.productHeader {
+.formHeader {
+    border-bottom: 1px #cccccc solid;
 }
+
+.productTitle {
+    font-size: 35px;
+}
+
+.priceFrom {
+    font-size: 16px;
+}
+
+.currencySign {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.startingPrice {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.orderTime {
+    font-size: 16px;
+    color: #1c6b27;
+    font-weight: normal;
+}
+
+.formMain {
+    display: flex;
+    flex-direction: column;
+}
+
+.formLabel {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.formSelect {
+    height: 70px;
+    width: 500px;
+    background: url('../assets/images/dropdownBg.png');
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
