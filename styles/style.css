@@ -111,14 +111,39 @@ header {
     grid-template-areas: 'productDisplay productForm'
 }
 
+.productThumbnail {
+    grid-area: productThumbnail;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #250858;
+    justify-self: center;
+    margin: 10% 0;
+}
+
+
 .productDisplay {
     grid-area: productDisplay;
     margin: 10%;
     display: grid;
     grid-template: 500px 50px / 20px 1fr 20px;
     grid-template-areas: 
-        'leftArrow productImage rightArrow'
-        '. productThumbnail .';
+    'leftArrow productImage rightArrow'
+    '. productThumbnail .';
+}
+
+@media only screen and (max-width: 830px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .productThumbnail {
+        margin: 15% 0;
+    }
+
+    .productDisplay {
+        margin-bottom: 100px;
+    }
 }
 
 .leftArrow {
@@ -137,19 +162,11 @@ header {
     height: auto;
 }
 
-.productThumbnail {
-    grid-area: productThumbnail;
-    width: 100px;
-    height: 100px;
-    border: 3px solid #250858;
-    justify-self: center;
-    margin: 80px 0;
-}
+
 
 .productForm {
     grid-area: productForm;
     padding: 30px;
-    /* display: grid; */
 }
 
 .formHeader {
@@ -201,7 +218,7 @@ header {
     grid-area: label;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .required {
@@ -211,14 +228,16 @@ header {
     font-size: 14px;
 }
 
-.formSelect, .formSelect-cushion {
+.formSelect {
     font-size: 16px;
     grid-area: select;
     height: 70px;
-    width: 500px;
-    background: url('../assets/images/dropdownBg.png');
-    /* border: 1px #cccccc solid; */
-    border: none;
+    width: 90%;
+    background-color: white;
+    background: url('../assets/images/arrowDown.png');
+    background-repeat: no-repeat;
+    border: 1px #cccccc solid;
+    background-position: 95% 50%;
     -webkit-appearance: none;
     -moz-appearance: none;
     padding: 19px;

@@ -45,7 +45,7 @@ function handleSelect(event) {
         updateUnitPrice();
         updateTotalPrice();
 
-        element.style.border = 'none';
+        element.style.border = '1px #cccccc solid';
         const required = getSibling(element, 'required')
         required.style.visibility = 'hidden';
         const parent = event.target.parentElement;
