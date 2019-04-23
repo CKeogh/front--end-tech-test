@@ -9,8 +9,9 @@ const quantityDisplay = document.querySelector('.quantityDisplay');
 const addToBasket = document.querySelector('.addToBasket');
 
 let unitPrice = 779;
-let quantity = 1;
-const orderLog = {};
+const orderLog = {
+    quantity: 1,
+};
 
 const extraCosts = {
     'Steelcut Trio (+£30.00)': 30,
@@ -89,16 +90,23 @@ function updateUnitPrice() {
 }
 
 function updateTotalPrice() {
-    const totalPriceString = `${(unitPrice * quantity).toFixed(2)}`
-    totalPriceNode.innerHTML = `<span class="priceLabel">Total </span><span style="font-size:22px;">£</span>${totalPriceString}`
+    const totalPrice = unitPrice * orderLog.quantity;
+    orderLog.totalPrice = totalPrice;
+    totalPriceNode.innerHTML = `<span class="priceLabel">Total </span><span style="font-size:22px;">£</span>${totalPrice.toFixed(2)}`
 }
 
 function changeQuantity(amount) {
-    if (quantity + amount != 0) {
-        quantity += amount;
+    if (orderLog.quantity + amount != 0) {
+        orderLog.quantity += amount;
     }
     updateTotalPrice();
-    quantityDisplay.value = quantity;
+    quantityDisplay.value = orderLog.quantity;
+}
+
+function handleSubmit() {
+    if (Object.keys(orderLog).length === 6) {
+        console.log(orderLog)
+    }
 }
 
 formSelect.forEach(element => {
@@ -108,3 +116,4 @@ formSelect.forEach(element => {
 
 quantityIncButton.addEventListener('click', () => { changeQuantity(1) })
 quantityDecButton.addEventListener('click', () => { changeQuantity(-1) })
+addToBasket.addEventListener('click', handleSubmit);
