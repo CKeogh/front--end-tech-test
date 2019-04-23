@@ -291,7 +291,7 @@ header {
 }
 
 .addToBasket {
-    width: 440px;
+    width: 90%;
     height: 50px;
     grid-area: addToBasket;
     background-color: #9b9b9b;

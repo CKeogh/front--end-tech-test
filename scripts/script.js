@@ -3,6 +3,10 @@ const formSelect = document.querySelectorAll('.formSelect');
 const legSelect = document.querySelector('#legSelect');
 const orderReview = document.querySelector('.orderReview')
 const totalPriceNode = document.querySelector('.total');
+const quantityIncButton = document.querySelector('#quantityInc');
+const quantityDecButton = document.querySelector('#quantityDec');
+const quantityDisplay = document.querySelector('.quantityDisplay');
+const addToBasket = document.querySelector('.addToBasket');
 
 let unitPrice = 779;
 let quantity = 1;
@@ -51,6 +55,7 @@ function handleSelect(event) {
         } else {
             orderReview.style.display = 'block';
             totalPriceNode.style.visibility = 'visible';
+            addToBasket.style.backgroundColor = '#250858'
         }
     }
 }
@@ -88,7 +93,18 @@ function updateTotalPrice() {
     totalPriceNode.innerHTML = `<span class="priceLabel">Total </span><span style="font-size:22px;">£</span>${totalPriceString}`
 }
 
+function changeQuantity(amount) {
+    if (quantity + amount != 0) {
+        quantity += amount;
+    }
+    updateTotalPrice();
+    quantityDisplay.value = quantity;
+}
+
 formSelect.forEach(element => {
     element.addEventListener('mousedown', validateForm)
     element.addEventListener('change', handleSelect)
 })
+
+quantityIncButton.addEventListener('click', () => { changeQuantity(1) })
+quantityDecButton.addEventListener('click', () => { changeQuantity(-1) })
