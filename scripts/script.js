@@ -2,14 +2,16 @@
 const formSelect = document.querySelectorAll('.formSelect');
 const legSelect = document.querySelector('#legSelect');
 const orderReview = document.querySelector('.orderReview')
+const totalPriceNode = document.querySelector('.total');
 
 let unitPrice = 779;
+let quantity = 1;
+const orderLog = {};
 
 const extraCosts = {
     'Steelcut Trio (+£30.00)': 30,
     'In Same Fabric, Group 4 (+£109.00)': 109
 };
-const orderLog = {};
 
 function validateForm(event) {
     const elementClasses = [...event.target.classList];
@@ -34,13 +36,9 @@ function handleSelect(event) {
     if (event.target.value) {
         const element = event.target;
 
-        const { value } = element;
-        // unitPrice += extraCosts[value]
-        //     ? extraCosts[value]
-        //     : 0;
-
         updateOrderReview(element);
         updateUnitPrice();
+        updateTotalPrice();
 
         element.style.border = 'none';
         const required = getSibling(element, 'required')
@@ -52,6 +50,7 @@ function handleSelect(event) {
             nextSelect.children[2].classList.remove('inactive');
         } else {
             orderReview.style.display = 'block';
+            totalPriceNode.style.visibility = 'visible';
         }
     }
 }
@@ -82,6 +81,11 @@ function updateUnitPrice() {
     const priceToString = `£${unitPrice.toFixed(2)}`
     const unitPriceNode = document.getElementById('unitPrice');
     unitPriceNode.innerHTML = `<span class="priceLabel">Unit Price: </span> ${priceToString}`
+}
+
+function updateTotalPrice() {
+    const totalPriceString = `${(unitPrice * quantity).toFixed(2)}`
+    totalPriceNode.innerHTML = `<span class="priceLabel">Total </span><span style="font-size:22px;">£</span>${totalPriceString}`
 }
 
 formSelect.forEach(element => {
