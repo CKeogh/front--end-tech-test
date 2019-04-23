@@ -17,18 +17,6 @@ const request = {
         'Home',
         'Hay About A Lounge Chair - Low AAL82'
     ],
-    fabrics: [
-        {
-            name: 'Steelcut Trio',
-            extraCost: 30,
-            image: '../assets/images/steelcutTrio.png'
-        },
-        {
-            name: 'Some Other Fabric',
-            extraCost: 20,
-            image: ''
-        }
-    ]
 }
 
 function populateNavBar() {

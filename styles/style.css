@@ -212,6 +212,7 @@ header {
 }
 
 .formSelect, .formSelect-cushion {
+    font-size: 16px;
     grid-area: select;
     height: 70px;
     width: 500px;
@@ -221,6 +222,16 @@ header {
     -webkit-appearance: none;
     -moz-appearance: none;
     padding: 19px;
+}
+
+.orderReview {
+    display: none;
+    padding: 31px 0;
+    border-bottom: 1px #cccccc solid;
+}
+
+.reviewLabel {
+    color: grey;
 }
 
 .priceCalc-container {
