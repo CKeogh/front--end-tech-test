@@ -1,83 +1,47 @@
+const formSelect = document.querySelectorAll('.formSelect');
 
-// placeholder api request
-const request = {
-    navigation: [
-        'Furniture',
-        'Lighting',
-        'Home Accessories',
-        'Collections',
-        'Gifts',
-        'Outlet',
-        'Brands',
-        'Blog',
-        'About',
-        'Our Stores'
-    ],
-    route: [
-        'Home',
-        'Hay About A Lounge Chair - Low AAL82'
-    ],
-    fabrics: [
-        {
-            name: 'Steelcut Trio',
-            extraCost: 30,
-            image: '../assets/images/steelcutTrio.png'
-        },
-        {
-            name: 'Some Other Fabric',
-            extraCost: 20,
-            image: ''
-        }
-    ]
+function validateForm(event) {
+
+    const elementClasses = [...event.target.classList];
+
+    if (elementClasses.includes('inactive')) {
+        event.preventDefault();
+        [...formSelect]
+            .filter(element => {
+                return ![...element.classList].includes('inactive')
+            })
+            .forEach(element => {
+                if (!element.value) {
+                    const required = getSibling(element, 'required')
+                    required.style.visibility = 'visible';
+                    element.style.border = '2px solid #d0021b'
+                }
+            })
+    }
 }
 
-function populateNavBar() {
-    const navBar = document.querySelector('.navList')
-    request.navigation.forEach(item => {
-        let node = document.createElement('LI')
-        let link = document.createElement('A')
-        link.setAttribute('href', '#')
-        let text = document.createTextNode(item)
-        link.appendChild(text)
-        node.appendChild(link);
-        node.classList.add('navItem');
-        navBar.appendChild(node);
-    })
+function handleSelect(event) {
+    console.dir(event.target)
+    if (event.target.value) {
+        const element = event.target;
+        element.style.border = 'none';
+        const required = getSibling(element, 'required')
+        required.style.visibility = 'hidden';
+        const parent = event.target.parentElement;
+        const nextSelect = parent.nextElementSibling;
+        nextSelect.children[0].classList.remove('inactive');
+        nextSelect.children[2].classList.remove('inactive');
+    }
 }
 
-function createRouteString(route) {
-    return route.reduce((routeString, page, i) => {
-        routeString += i === route.length - 1
-            ? `${page}`
-            : `${page} » `
-        return routeString;
-    }, '')
+function getSibling(element, sibClass) {
+    const parent = element.parentElement;
+    return [...parent.children].filter(child => {
+        return [...child.classList].includes(sibClass)
+    })[0];
 }
 
-function populateRoute() {
-    const routeElement = document.querySelector('.route');
-    const routeString = createRouteString(request.route);
-    const text = document.createTextNode(routeString);
-    routeElement.appendChild(text);
-}
-
-// function populateDropdown(id, contents) {
-//     const formSelect = document.querySelector(id);
-//     contents.forEach(item => {
-//         const option = document.createElement('div');
-//         option.classList.add('formOption');
-//         const fabricImage = document.createElement('img');
-//         option.appendChild(fabricImage);
-//         const formText = document.createElement('div')
-//         const text = document.createTextNode(item.name);
-//         formText.appendChild(text);
-//         fabricImage.src = item.image;
-//         option.appendChild(fabricImage);
-//         option.appendChild(formText);
-//         formSelect.appendChild(option);
-//     })
-// }
-
-populateNavBar();
-populateRoute();
-// populateDropdown('#fabricSelect', request.fabrics);
+formSelect.forEach(element => {
+    element.addEventListener('mousedown', validateForm)
+    element.addEventListener('click', handleSelect)
+})

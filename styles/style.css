@@ -187,13 +187,32 @@ header {
     border-bottom: 1px #cccccc solid;
 }
 
-.formLabel {
-    font-weight: bold;
+.formSelect-container {
     margin: 10px 0;
-    font-size: 20px;
+    display: grid;
+    grid-template: 30px 70px / 1fr 150px;
+    grid-template-areas:
+        'label required'
+        'select select';
+    align-items: center;
 }
 
-.formSelect {
+.formLabel {
+    grid-area: label;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.required {
+    visibility: hidden;
+    grid-area: required;
+    color: #d0021b;
+    font-size: 14px;
+}
+
+.formSelect, .formSelect-cushion {
+    grid-area: select;
     height: 70px;
     width: 500px;
     background: url('../assets/images/dropdownBg.png');
@@ -262,3 +281,7 @@ header {
     border: none;
     background-color: white;
 }
+
+.inactive {
+    color: #9b9b9b;
+};
