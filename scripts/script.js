@@ -3,10 +3,11 @@ const formSelect = document.querySelectorAll('.formSelect');
 const legSelect = document.querySelector('#legSelect');
 const orderReview = document.querySelector('.orderReview')
 
-let totalPrice = 779;
+let unitPrice = 779;
+
 const extraCosts = {
-    'Steelcut Trio': 30,
-    'In Same Fabric, Group 4': 109
+    'Steelcut Trio (+£30.00)': 30,
+    'In Same Fabric, Group 4 (+£109.00)': 109
 };
 const orderLog = {};
 
@@ -34,11 +35,12 @@ function handleSelect(event) {
         const element = event.target;
 
         const { value } = element;
-        totalPrice += extraCosts[value]
-            ? extraCosts[value]
-            : 0;
+        // unitPrice += extraCosts[value]
+        //     ? extraCosts[value]
+        //     : 0;
 
         updateOrderReview(element);
+        updateUnitPrice();
 
         element.style.border = 'none';
         const required = getSibling(element, 'required')
@@ -69,9 +71,18 @@ function updateOrderReview(element) {
     pNode.innerHTML = `<span class="reviewLabel">${label} </span> ${orderLog[label]}`
 }
 
-// function calculateUnitPrice() {
-
-// }
+function updateUnitPrice() {
+    let price = 779;
+    Object.values(orderLog).forEach(item => {
+        if (extraCosts[item]) {
+            price += extraCosts[item];
+        }
+    })
+    unitPrice = price;
+    const priceToString = `£${unitPrice.toFixed(2)}`
+    const unitPriceNode = document.getElementById('unitPrice');
+    unitPriceNode.innerHTML = `<span class="priceLabel">Unit Price: </span> ${priceToString}`
+}
 
 formSelect.forEach(element => {
     element.addEventListener('mousedown', validateForm)
