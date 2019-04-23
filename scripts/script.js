@@ -1,4 +1,11 @@
 const formSelect = document.querySelectorAll('.formSelect');
+let totalPrice = 779;
+const order = {
+    product: {
+        name: 'Hay About A Lounge Chair',
+        cost: 779
+    },
+}
 
 function validateForm(event) {
 
@@ -11,7 +18,7 @@ function validateForm(event) {
                 return ![...element.classList].includes('inactive')
             })
             .forEach(element => {
-                if (!element.value) {
+                if (!element.value || element.value === 'None') {
                     const required = getSibling(element, 'required')
                     required.style.visibility = 'visible';
                     element.style.border = '2px solid #d0021b'
@@ -21,7 +28,6 @@ function validateForm(event) {
 }
 
 function handleSelect(event) {
-    console.dir(event.target)
     if (event.target.value) {
         const element = event.target;
         element.style.border = 'none';
