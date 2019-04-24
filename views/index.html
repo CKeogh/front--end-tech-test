@@ -33,10 +33,10 @@
         </div>
     </header>
     <ul class="navList">
-        <!-- get nav items from db -->
+        <!-- get nav items from api.js -->
     </ul>
     <span class="route">
-        <!-- get route from db -->
+        <!-- get route from api.js -->
     </span>
 
     <div class="main">
@@ -86,7 +86,6 @@
                         <option class="formOption" value="Clear Lacquered Oak">Clear Lacquered Oak</option>
                         <option class="formOption" value="Matt Lacquered Oak">Matt Lacquered Oak</option>
                     </select>
-
                 </div>
                 <div class="formSelect-container">
                     <label class="formLabel inactive" for="seatSelect">Optional Seat Cushion:</label>
@@ -101,6 +100,7 @@
 
                 </div>
             </form>
+
             <div class="orderReview">
                 <p>Hay About A Lounge Chair - Low AAL82: £779.00</p>
                 <p id="Fabric:"><span>Fabric: </span></p>
@@ -109,6 +109,7 @@
                 <p id="Optional Seat Cushion:"><span>Optional Seat Cushion: </span></p>
                 <p id="unitPrice"></p>
             </div>
+
             <div class="priceCalc-container">
                 <p class="formLabel priceCalc-title">Quantity</p>
                 <input class="quantityDisplay" disabled value="1" />
@@ -122,14 +123,26 @@
                 <button class="addToBasket">Add to Basket</button>
                 <button class="wishList"><img src="../assets/images/wishList-button.png" /></button>
             </div>
+
+            <div id="termsAndCons">
+                <p class="termsAndCons-text"><img src="../assets/images/greenTick.png" /> 0% finance available, <a
+                        class="termsAndCons-link" href="#"> find out more</a></p>
+                <p class="termsAndCons-text"><img src="../assets/images/greenTick.png" /> Free UK mainland delivery</p>
+                <p class="termsAndCons-text"><img src="../assets/images/greenTick.png" /> 100% Original designs only</p>
+                <p class="termsAndCons-text"><img src="../assets/images/greenTick.png" /> Price match. Found it
+                    cheaper?<a class="termsAndCons-link" href="#"> contact us</a></p>
+                <p class="termsAndCons-text"><img src="../assets/images/greenTick.png" /> Trade Discount Available</p>
+            </div>
+
+            <div id="shareLinks">
+                <p>Share online:</p>
+                <a href="#" class="shareLink"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="shareLink"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="shareLink"><i class="fab fa-pinterest"></i></a>
+            </div>
         </div>
     </div>
 
 </body>
 
 </html>
-
-<!-- TODO -->
-<!-- * change styling of selects so not hard coded -->
-<!-- * make form responsive -->
-<!-- media query to work for phones as well -->

@@ -1,4 +1,3 @@
-
 const formSelect = document.querySelectorAll('.formSelect');
 const legSelect = document.querySelector('#legSelect');
 const orderReview = document.querySelector('.orderReview')
@@ -61,12 +60,6 @@ function handleSelect(event) {
     }
 }
 
-function getSibling(element, sibClass) {
-    const parent = element.parentElement;
-    return [...parent.children].filter(child => {
-        return [...child.classList].includes(sibClass)
-    })[0];
-}
 
 function updateOrderReview(element) {
     const formLabel = getSibling(element, 'formLabel');
@@ -107,6 +100,13 @@ function handleSubmit() {
     if (Object.keys(orderLog).length === 6) {
         console.log(orderLog)
     }
+}
+
+function getSibling(element, sibClass) {
+    const parent = element.parentElement;
+    return [...parent.children].filter(child => {
+        return [...child.classList].includes(sibClass)
+    })[0];
 }
 
 formSelect.forEach(element => {

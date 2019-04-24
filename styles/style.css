@@ -163,11 +163,41 @@ header {
 }
 
 
+#termsAndCons {
+    border: 1px #cccccc solid;
+    padding: 3%;
+}
+
+.termsAndCons-link {
+    text-decoration: underline;
+}
+
+#shareLinks {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.shareLink {
+    margin-left: 5%;
+}
+
+.fab {
+    color: #2f2f2f;
+    transition: color 0.5s ease;
+    font-size: 20px;
+}
+
+.fab:hover {
+    color: #9c9c9c;
+}
 
 .productForm {
     grid-area: productForm;
     padding: 30px;
 }
+
 
 .formHeader {
     border-bottom: 1px #cccccc solid;
@@ -326,6 +356,8 @@ header {
     grid-area: wishList;
     border: none;
     background-color: white;
+    padding: 0;
+
 }
 
 .inactive {

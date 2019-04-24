@@ -49,23 +49,5 @@ function populateRoute() {
     routeElement.appendChild(text);
 }
 
-// function populateDropdown(id, contents) {
-//     const formSelect = document.querySelector(id);
-//     contents.forEach(item => {
-//         const option = document.createElement('div');
-//         option.classList.add('formOption');
-//         const fabricImage = document.createElement('img');
-//         option.appendChild(fabricImage);
-//         const formText = document.createElement('div')
-//         const text = document.createTextNode(item.name);
-//         formText.appendChild(text);
-//         fabricImage.src = item.image;
-//         option.appendChild(fabricImage);
-//         option.appendChild(formText);
-//         formSelect.appendChild(option);
-//     })
-// }
-
 populateNavBar();
 populateRoute();
-// populateDropdown('#fabricSelect', request.fabrics);
