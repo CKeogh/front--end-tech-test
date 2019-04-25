@@ -38,11 +38,6 @@ header {
     margin: 0 50px;
 }
 
-/* THIS NEEDS TO BE EXTRACTED -- CURRENTLY INLINE */
-.searchField {
-    /* border: 0px solid; */
-}
-
 .logo {
     grid-area: logo;
     width: 140px;

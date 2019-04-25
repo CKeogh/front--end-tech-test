@@ -6,11 +6,12 @@ date: 2019-04-18
 
 # Igoo Tech-test - Utility Design
 
-This is my attempt at the Igoo tech-test in which we are expected to implement a new design for a single page of the Utility website.
-
 ## Running the code in the browser
-To view the finished page copy the index.html path - located in the views directory - and paste it into the browser. Alternatively, if using a Linux operating system, simply navigate to the views directory in the terminal and run the following command: 
-```
-sensible-browser index.html
-```
+To view the finished page copy the *index.html* path - located in the views directory - and paste it into the browser. No third-party libraries have been used in the implementation of the web page so there is no need to install any extra packages before running.
 
+## Directory Structure
+
+The main HTML file can be found in the views directory, the assets directory contains all image files, and the CSS content is all included in the styles directory. 
+There are two JavaScript files in the scripts directory. *api.js* contains some basic functions that are supposed to extract some of the repetition away from the *index.html* and simulate a request for data from the backend api.
+
+In the *script.js* is all of main code for the form. As stated above, no third-party libraries have been used so everything should be good to go as is.
