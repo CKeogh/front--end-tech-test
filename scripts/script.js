@@ -24,13 +24,13 @@ function validateForm(event) {
         event.preventDefault();
         [...formSelect]
             .filter(element => {
-                return ![...element.classList].includes('inactive')
+                return ![...element.classList].includes('inactive');
             })
             .forEach(element => {
                 if (!element.value || element.value === 'None') {
-                    const required = getSibling(element, 'required')
+                    const required = getSibling(element, 'required');
                     required.style.visibility = 'visible';
-                    element.style.border = '2px solid #d0021b'
+                    element.style.border = '2px solid #d0021b';
                 }
             })
     }

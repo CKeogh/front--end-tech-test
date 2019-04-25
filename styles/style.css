@@ -108,7 +108,8 @@ header {
     grid-area: mainContent;
     display: grid;
     grid-template-columns: 6fr 5fr;
-    grid-template-areas: 'productDisplay productForm'
+    grid-template-areas: 
+        'productDisplay productForm';
 }
 
 .productThumbnail {
@@ -176,7 +177,6 @@ header {
     margin-top: 20px;
     display: flex;
     align-items: center;
-    justify-content: right;
 }
 
 .shareLink {
